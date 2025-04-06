@@ -50,6 +50,9 @@ azure = [
 cohere = [
     "cohere>=5.13.4",
 ]
+gemini = [
+    "google-genai>=1.9.0",
+]
 
 [build-system]
 requires = ["hatchling"]

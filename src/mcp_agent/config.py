@@ -148,6 +148,16 @@ class AzureSettings(BaseModel):
     model_config = ConfigDict(extra="allow", arbitrary_types_allowed=True)
 
 
+class GeminiSettings(BaseModel):
+    """
+    Settings for using Gemini models in the MCP Agent application.
+    """
+
+    api_key: str
+
+    model_config = ConfigDict(extra="allow", arbitrary_types_allowed=True)
+
+
 class TemporalSettings(BaseModel):
     """
     Temporal settings for the MCP Agent application.
@@ -301,6 +311,9 @@ class Settings(BaseSettings):
 
     azure: AzureSettings | None = None
     """Settings for using Azure models in the MCP Agent application"""
+
+    gemini: GeminiSettings | None = None
+    """Settings for using Gemini models in the MCP Agent application"""
 
     otel: OpenTelemetrySettings | None = OpenTelemetrySettings()
     """OpenTelemetry logging settings for the MCP Agent application"""
